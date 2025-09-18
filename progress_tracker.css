@@ -76,38 +76,41 @@ body {
     padding: 30px;
     border-radius: 24px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .calendar-header h2 {
     font-family: var(--font-heading);
-    font-size: 1.8em;
+    font-size: 1.9em;
     font-weight: 600;
     color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
 .calendar-header button {
-    background: none;
-    border: none;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 50%;
     width: 44px;
     height: 44px;
     font-size: 1.6em;
     color: var(--primary-text-color);
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
 }
 
 .calendar-header button:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255,255,255,0.2);
     color: #fff;
+    transform: scale(1.1);
 }
 
 #weekday-header {
@@ -115,7 +118,8 @@ body {
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
     color: var(--secondary-text-color);
 }
 
@@ -123,40 +127,48 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 12px;
+    justify-items: center;
 }
 
 .calendar-day {
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     font-weight: 600;
     font-size: 1.1em;
     transition: all 0.2s ease-in-out;
     position: relative;
+    border: 1px solid transparent;
 }
 
 .calendar-day:not(:empty) {
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .calendar-day:not(:empty):hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
 }
 
 .calendar-day.current-day {
-    box-shadow: 0 0 0 3px #00c6ff;
+    border-color: #00c6ff;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
 }
 
 .calendar-day.done {
     background: var(--grad-done);
     color: white;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+    border: none;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.6), 0 10px 20px rgba(0, 198, 255, 0.2);
 }
+
 
 /* --- Stats Sidebar Styles --- */
 .stats-sidebar {

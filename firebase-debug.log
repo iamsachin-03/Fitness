@@ -1,0 +1,210 @@
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-09-18T09:28:09.082Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.082Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.083Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.085Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.086Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.138Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.139Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.139Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.140Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.140Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.144Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.144Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.145Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.146Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.146Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.151Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.151Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.151Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.151Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.151Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.154Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.154Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.154Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.155Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.155Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.157Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.157Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.157Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.158Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.158Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.160Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.160Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.160Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.161Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.161Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.163Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.163Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.163Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.163Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.164Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.165Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.166Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.166Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.166Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.166Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-09-18T09:28:09.260Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.260Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.260Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.261Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.261Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.264Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.264Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.264Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.264Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.265Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.267Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.267Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.267Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.268Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.268Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.270Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.270Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.270Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.271Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.271Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.273Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.273Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.274Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.275Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.275Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.277Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.277Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.277Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.278Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.278Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.280Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.281Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.281Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.281Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.281Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.283Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.283Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.283Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.284Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.284Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.287Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.287Z] Checked if tokens are valid: false, expires at: 1758186799963
+[debug] [2025-09-18T09:28:09.287Z] > refreshing access token with scopes: []
+[debug] [2025-09-18T09:28:09.288Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-18T09:28:09.288Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.376Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.376Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.394Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.395Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.415Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.415Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.427Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.427Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.443Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.443Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.458Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.458Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.481Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.481Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.493Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.494Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.499Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.500Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.514Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.514Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.516Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.516Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.528Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.528Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.534Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.535Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.553Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ [none]
+[debug] [2025-09-18T09:28:09.553Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.556Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.556Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.572Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.572Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.575Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.575Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.587Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.588Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.612Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.612Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.627Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.627Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.636Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.636Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.655Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.655Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.695Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.697Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.712Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.712Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.714Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.714Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.725Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com [none]
+[debug] [2025-09-18T09:28:09.726Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.737Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.737Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.753Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ [none]
+[debug] [2025-09-18T09:28:09.753Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.761Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.763Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.781Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.781Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.783Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.784Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.796Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.796Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.806Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.806Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.820Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-18T09:28:09.820Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:09.823Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-18T09:28:09.823Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-18T09:28:09.833Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com [none]
+[debug] [2025-09-18T09:28:09.833Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com x-goog-quota-user=projects/fitness-tracker-app-92104
+[debug] [2025-09-18T09:28:10.483Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com 200
+[debug] [2025-09-18T09:28:10.483Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.504Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-18T09:28:10.505Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.631Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-09-18T09:28:10.632Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.662Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-18T09:28:10.662Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.668Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com 200
+[debug] [2025-09-18T09:28:10.669Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.684Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com 200
+[debug] [2025-09-18T09:28:10.684Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/storage.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.727Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com 200
+[debug] [2025-09-18T09:28:10.727Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.741Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-18T09:28:10.742Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.747Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-18T09:28:10.747Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.768Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com 200
+[debug] [2025-09-18T09:28:10.770Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/fcm.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.790Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com 403
+[debug] [2025-09-18T09:28:10.791Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com [omitted]
+[debug] [2025-09-18T09:28:10.823Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com 403
+[debug] [2025-09-18T09:28:10.823Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseio.com [omitted]
+[debug] [2025-09-18T09:28:10.837Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-18T09:28:10.838Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.840Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-09-18T09:28:10.840Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.859Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-18T09:28:10.860Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.872Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com 200
+[debug] [2025-09-18T09:28:10.872Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-09-18T09:28:10.971Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ 200
+[debug] [2025-09-18T09:28:10.971Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ [omitted]
+[debug] [2025-09-18T09:28:11.076Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ 200
+[debug] [2025-09-18T09:28:11.077Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fitness-tracker-app-92104/services/ [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-09-18T09:28:11.082Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-09-18T09:28:11.083Z] > authorizing via signed-in user (sachinpriyadarshi03@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-09-18T09:28:11.113Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-09-18T09:28:11.114Z] > authorizing via signed-in user (sachinpriyadarshi03@gmail.com)
