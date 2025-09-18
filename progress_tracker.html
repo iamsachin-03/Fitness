@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Main Stylesheet (with versioning) -->
+    <link rel="stylesheet" href="progress_tracker.css?v=5">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Home</a>
+            <h1>Your Progress</h1>
+        </header>
+
+        <div class="layout-grid">
+            <!-- Main Calendar -->
+            <div id="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month-btn" aria-label="Previous Month"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="month-year-display">Loading...</h2>
+                    <button id="next-month-btn" aria-label="Next Month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div id="weekday-header"></div>
+                <div id="calendar-grid">
+                    <p class="loading-text">Loading calendar...</p>
+                </div>
+                <div id="error-container" style="display:none;"></div>
+            </div>
+
+            <!-- Stats Sidebar -->
+            <div class="stats-sidebar">
+                <div class="stat-card total-workouts">
+                    <div class="stat-icon"><i class="fas fa-dumbbell"></i></div>
+                    <div class="stat-info">
+                        <h2>Total Workouts</h2>
+                        <p id="total-days-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card weekly-workouts">
+                    <div class="stat-icon"><i class="fas fa-calendar-week"></i></div>
+                    <div class="stat-info">
+                        <h2>This Week</h2>
+                        <p id="weekly-streak-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card current-streak">
+                    <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                    <div class="stat-info">
+                        <h2>Current Streak</h2>
+                        <p id="current-streak-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card longest-streak">
+                    <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                    <div class="stat-info">
+                        <h2>Longest Streak</h2>
+                        <p id="longest-streak-count">0</p>
+                    </div>
+                </div>
+                <p class="instruction-text">Click a day to log your workout.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="progress_tracker.js?v=5"></script>
+</body>
+</html>

@@ -1,1 +1,171 @@
-/* Add styles here */
+:root {
+    --background-color: #1a1a2e;
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #a0a0b0;
+    --card-background: rgba(255, 255, 255, 0.05);
+    --card-border-color: rgba(255, 255, 255, 0.2);
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Gradients for Nav Cards */
+    --grad-nav-card-1: linear-gradient(135deg, #00c6ff, #0072ff);
+    --grad-nav-card-2: linear-gradient(135deg, #ffc837, #ff8008);
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px; /* Increased width for two cards */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    margin-bottom: 60px;
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.hero-section .subtitle {
+    font-size: 1.4em;
+    color: var(--primary-text-color);
+    margin: 0 0 30px 0;
+}
+
+#quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--secondary-text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Navigation --- */
+.main-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two column layout */
+    gap: 30px; /* Space between cards */
+}
+
+.nav-card {
+    background: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.nav-card:nth-child(1):hover { border-color: rgba(0, 198, 255, 0.5); }
+.nav-card:nth-child(2):hover { border-color: rgba(255, 200, 55, 0.5); }
+
+.nav-card-icon {
+    font-size: 2.5em; /* Slightly smaller for balance */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.nav-card:nth-child(1) .nav-card-icon {
+    background: var(--grad-nav-card-1);
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.5);
+}
+
+.nav-card:nth-child(2) .nav-card-icon {
+    background: var(--grad-nav-card-2);
+    box-shadow: 0 0 25px rgba(255, 200, 55, 0.5);
+}
+
+.nav-card-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.nav-card-info p {
+    font-size: 1em;
+    color: var(--secondary-text-color);
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.nav-card-info span {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.nav-card:nth-child(1) .nav-card-info span { color: #00c6ff; }
+.nav-card:nth-child(2) .nav-card-info span { color: #ffc837; }
+
+.nav-card:hover .nav-card-info span {
+    gap: 15px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .main-nav {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    body { padding: 20px; }
+    
+    .hero-section h1 { font-size: 2.8em; }
+    .hero-section .subtitle { font-size: 1.2em; }
+
+    .nav-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .nav-card-icon {
+        margin: 0 0 20px 0;
+    }
+
+    .nav-card-info h2 { font-size: 1.5em; }
+    .nav-card-info span {
+        justify-content: center;
+    }
+}

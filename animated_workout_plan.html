@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Default to dark theme -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Workout Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // On page load, apply theme from local storage or system preference to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Transition for background color changes */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Active tab style */
+        .tab-btn.active {
+            background-color: #3B82F6; /* Tailwind blue-500 */
+            color: white !important;
+        }
+
+        .animation-container {
+            width: 100%;
+            height: 200px; /* Adjusted height for better visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem auto 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            cursor: pointer; /* Indicates GIFs are clickable */
+            transition: background-color 0.3s ease;
+        }
+        
+        .workout-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changed from 'cover' to 'contain' to show the full GIF */
+        }
+
+        .muscle-group-label {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            border-width: 1px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300">
+
+    <div class="container mx-auto px-4 py-8 relative">
+        <!-- Theme Toggle Button -->
+        <div class="absolute top-4 right-4">
+            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 transition-colors">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white tracking-wider">Weekly Workout Plan</h1>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Select a day to see the workout and animations.</p>
+        </header>
+
+        <!-- Day Navigation -->
+        <nav class="flex justify-center flex-wrap gap-2 md:gap-4 mb-8">
+            <button data-day="monday" class="tab-btn active px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Monday</button>
+            <button data-day="tuesday" class="tab-btn px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Tuesday</button>
+            <button data-day="wednesday" class="tab-btn px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Wednesday</button>
+            <button data-day="thursday" class="tab-btn px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Thursday</button>
+            <button data-day="friday" class="tab-btn px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Friday</button>
+            <button data-day="saturday" class="tab-btn px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:text-white">Saturday</button>
+        </nav>
+
+        <!-- Workouts Container -->
+        <main>
+            <!-- Monday: Chest + Triceps -->
+            <section id="monday" class="workout-day">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 1: Chest + Triceps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Barbell Bench Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x6-8</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif" alt="Barbell Bench Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Incline Dumbbell Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x8-10</p>
+                         <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                         <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif" alt="Incline Dumbbell Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Chest Dips</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12-15</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://media1.tenor.com/m/7qFqk839s9wAAAAd/dips.gif" alt="Chest Dips Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Skull Crushers</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10-12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/y_Z2oZ35sP8AAAAd/skull-crusher-dumbells.gif" alt="Skull Crushers Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Triceps Rope Pushdown</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12-15</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/mbebKudZjxYAAAAC/tr%C3%ADceps-pulley.gif" alt="Triceps Rope Pushdown Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Overhead Dumbbell Extension</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/V3J-mg9gH0kAAAAC/seated-dumbbell-triceps-extension.gif" alt="Overhead Dumbbell Extension Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tuesday: Back + Biceps -->
+            <section id="tuesday" class="workout-day hidden">
+                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 2: Back + Biceps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Pull-Ups</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x8-10</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif" alt="Pull-Ups Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Barbell Bent Over Row</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x6-8</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/AYJ_bNXDvoUAAAAd/workout-muscles.gif" alt="Barbell Bent Over Row Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Seated Cable Row</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10-12</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" alt="Seated Cable Row Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Barbell Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/nLodhTy5DjwAAAAd/bodybuilding-biceps.gif" alt="Barbell Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Incline Dumbbell Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/j6wkDQurcm8AAAAd/incline-biceps-curl.gif" alt="Incline Dumbbell Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Hammer Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/XWnWViXkK1MAAAAC/greeg-sulkin-work-out.gif" alt="Hammer Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Wednesday: Shoulders + Legs -->
+            <section id="wednesday" class="workout-day hidden">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 3: Shoulders + Legs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Seated Dumbbell Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x8-10</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Shoulder-Press.gif" alt="Seated Dumbbell Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Lateral Raises</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x15</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Lateral Raises Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Rear Delt Fly</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://media1.tenor.com/m/JS3Ru7KZxKkAAAAC/rear-deltt-fly-dumbells.gif" alt="Rear Delt Fly Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Barbell Squats</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x6-8</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/pdMmsiutWkcAAAAC/gym.gif" alt="Barbell Squats Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Romanian Deadlifts</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://cdn.shopify.com/s/files/1/0449/8453/3153/files/barbell-deadlift_600x600.gif?v=1690860568" alt="Romanian Deadlifts Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Walking Lunges</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12 per leg</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGx2dTl5enI0eTJnYjZ1dm5seHozcHRlaXN2bGRhamc5a2xudDIwbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT1XGWnISCovKED3ji/giphy.gif" alt="Walking Lunges Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Seated Calves Raises</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4 sets x failure</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://newlife.com.cy/wp-content/uploads/2019/11/26661301-Lever-Seated-Calf-Raise-plate-loaded-VERSION-2_Calves_360.gif" alt="Seated Calves Raises Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thursday: Chest + Triceps (variation) -->
+            <section id="thursday" class="workout-day hidden">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 4: Chest + Triceps (Variation)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Incline Barbell Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x6-8</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Barbell-Bench-Press.gif" alt="Incline Barbell Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Flat Dumbbell Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXdzM3kyem9nbXJzZGJhNWMyYThpaml0eWJqcDVweGlvanpibGR2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Je0bLxY7FLirmTK/giphy.gif" alt="Flat Dumbbell Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Cable Crossover</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x15</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Chest</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Crossover.gif" alt="Cable Crossover Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Close-Grip Bench Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x8-10</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Close-Grip-Bench-Press.gif" alt="Close-Grip Bench Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Dumbbell Kickbacks</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12-15</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Kickback.gif" alt="Dumbbell Kickbacks Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Overhead Rope Extension</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Triceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://burnfit.io/wp-content/uploads/2023/11/CABLE_OHT_EXT.gif" alt="Overhead Rope Extension Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Friday: Back + Biceps (variation) -->
+            <section id="friday" class="workout-day hidden">
+                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 5: Back + Biceps (Variation)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">T-Bar Row</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x8</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                         <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/DPfMJrsdpTAAAAAd/t-bar-row.gif" alt="T-Bar Row Animation" class="workout-gif">
+                         </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Wide Grip Lat Pulldown</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" alt="Wide Grip Lat Pulldown Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Chest Supported Row</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Back</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/XgiKCfCQvisAAAAd/chest-supported-row.gif" alt="Chest Supported Row Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Preacher Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://gymvisual.com/img/p/4/8/0/1/4801.gif" alt="Preacher Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Cable Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x15</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/GYDvpl2ycIYAAAAd/cable-bicesp-curl.gif" alt="Cable Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Concentration Curl</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Biceps</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/jaX3EUxaQGkAAAAd/rosca-concentrada-no-banco.gif" alt="Concentration Curl Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saturday: Shoulders + Legs (variation) -->
+            <section id="saturday" class="workout-day hidden">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-6">Day 6: Shoulders + Legs (Variation)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Overhead Barbell Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4x6-8</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/udvHzqZP_hoAAAAC/standing-barbell-press.gif" alt="Overhead Barbell Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Upright Row</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://gymvisual.com/img/p/2/4/7/9/0/24790.gif" alt="Upright Row Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Dumbbell Lateral Raise</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3 sets dropset</p>
+                        <span class="muscle-group-label bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-gray-600">Shoulders</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Dumbbell Lateral Raise Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Bulgarian Split Squats</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x10 each leg</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://media1.tenor.com/m/8dUU3fffAp8AAAAd/db-bulgarian-split-squat.gif" alt="Bulgarian Split Squats Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Leg Press</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x12</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://media1.tenor.com/m/yBaS_oBgidsAAAAd/gym.gif" alt="Leg Press Animation" class="workout-gif">
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Leg Curl Machine</h3>
+                        <p class="text-blue-500 dark:text-blue-400">3x15</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                         <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                            <img src="https://media1.tenor.com/m/GLaVvK15troAAAAd/seated-leg-curl.gif" alt="Leg Curl Animation" class="workout-gif">
+                         </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg text-center transition-colors">
+                        <h3 class="font-semibold text-lg text-gray-900 dark:text-white">Standing Calf Raises</h3>
+                        <p class="text-blue-500 dark:text-blue-400">4 sets x failure</p>
+                        <span class="muscle-group-label bg-green-100 dark:bg-gray-700 text-green-600 dark:text-green-400 border-green-200 dark:border-gray-600">Legs</span>
+                        <div class="animation-container bg-gray-200 dark:bg-gray-700">
+                           <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif" alt="Standing Calf Raises Animation" class="workout-gif">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- GIF Preview Modal -->
+    <div id="gif-preview-modal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+        <div class="relative bg-white dark:bg-gray-900 p-4 rounded-lg max-w-xl w-full">
+            <button id="close-modal-btn" class="absolute -top-2 -right-2 bg-gray-600 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg font-bold transition-colors z-10">&times;</button>
+            <img id="modal-gif" src="" alt="Workout Preview" class="w-full h-auto rounded-lg">
+        </div>
+    </div>
+
+
+    <script>
+        // Wait for the DOM to be fully loaded before running any scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const workoutDays = document.querySelectorAll('.workout-day');
+            const gifImages = document.querySelectorAll('.workout-gif');
+            const modal = document.getElementById('gif-preview-modal');
+            const modalGif = document.getElementById('modal-gif');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+            // Function to apply the correct icon state based on the current theme
+            const applyThemeIcon = () => {
+                // The source of truth is the 'dark' class on the HTML element
+                if (document.documentElement.classList.contains('dark')) {
+                    // If it IS dark mode: Show the sun icon (to switch to light)
+                    themeToggleDarkIcon.classList.add('hidden');
+                    themeToggleLightIcon.classList.remove('hidden');
+                } else {
+                    // If it is NOT dark mode (light mode): Show the moon icon (to switch to dark)
+                    themeToggleDarkIcon.classList.remove('hidden');
+                    themeToggleLightIcon.classList.add('hidden');
+                }
+            };
+
+            // Apply the correct icon on initial page load
+            applyThemeIcon();
+
+            // Add click listener for the theme toggle button
+            themeToggleButton.addEventListener('click', function() {
+                // 1. Toggle the 'dark' class on the root <html> element
+                document.documentElement.classList.toggle('dark');
+
+                // 2. Update localStorage with the new theme preference
+                const isNowDarkMode = document.documentElement.classList.contains('dark');
+                localStorage.setItem('color-theme', isNowDarkMode ? 'dark' : 'light');
+                
+                // 3. Update the button icon to reflect the new state
+                applyThemeIcon();
+            });
+
+            // Tab switching logic
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelector('.tab-btn.active').classList.remove('active');
+                    button.classList.add('active');
+                    
+                    const targetDay = button.dataset.day;
+                    workoutDays.forEach(day => day.classList.add('hidden'));
+                    document.getElementById(targetDay).classList.remove('hidden');
+                });
+            });
+
+            // GIF modal logic
+            gifImages.forEach(gif => {
+                gif.parentElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modalGif.src = gif.src;
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            // Function to close the modal
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                modalGif.src = ""; // Clear src to stop GIF loading
+            };
+
+            closeModalBtn.addEventListener('click', closeModal);
+            
+            // Close modal when clicking on the background overlay
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
